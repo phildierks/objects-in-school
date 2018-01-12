@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>School System Management</title>
+    <script src="objects-in-school.js"></script>
+    <script src="objectconstructors.js"></script>
+    <link rel="stylesheet" href="objects-in-school.css"/>
+</head>
+
+<h1>School Management System</h1>
+<br>
+<select id="list">
+    <option value="0"> Students</option>
+    <option value="1"> Teachers</option>
+    <option value="2"> Sections</option>
+</select>
+
+<button id="listItems" onclick="listItems()"> List Items</button>
+<br>
+<br>
+<div id="listedItems"></div>
+<hr>
+<br>
+<select id="studentSearch">
+    <option value="0"> Select Student</option>
+</select>
+<select id="teacherSearch">
+    <option value="0"> Select Teacher</option>
+</select>
+<select id="sectionSearch">
+    <option value="0"> Select Section</option>
+</select>
+<button id="addSelection"> Add Selection</button>
+</br>
+<br>
+<hr>
+<br>
+<input id="firstNameStudent" type="text" placeholder="First Name">
+<input id="lastNameStudent" type="text" placeholder="Last Name">
+<input id="studentGrade" type="text" placeholder="Grade">
+<button id="addStudent" onclick= addStudent()> Add Student</button>
+</br>
+<br>
+<input id="firstNameTeacher" type="text" placeholder="First Name">
+<input id="lastNameTeacher" type="text" placeholder="Last Name">
+<input id="teacherSubject" type="text" placeholder="Subject">
+<button id="addTeacher" onclick = "addTeacher()"> Add Teacher</button>
+</br>
+<br>
+<input id="sectionName" type="text" placeholder="Section Name">
+<input id="sectionCount" type="text" placeholder="Section Count">
+<button id="addSection" onclick="addSection()"> Add Section</button>
+</br>
+<br>
+    <div id="added"></div>
+    </br>
+
+</body>
+</html>
