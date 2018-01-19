@@ -20,6 +20,7 @@ function addStudent(){
     document.getElementById("added").innerHTML = "Student Added";
     clearBoxes();
 }
+
 function addTeacher(){
     var firstName = document.getElementById("firstNameTeacher").value;
     var lastName = document.getElementById("lastNameTeacher").value;
@@ -35,23 +36,28 @@ function addSection(){
     document.getElementById("added").innerHTML = "Section Added";
     clearBoxes();
 }
-function addSelectBox() {
-  for(var i = 0;i < allItems[0].length;i++) {
-    document.getElementById("studentSearch").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0[i].lastName + "</option>";
+
+function addSelectBox(){
+   for(var i = 0; i < allItems[0].length; i++) {
+       document.getElementById("studentSearch").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
     }
-    for(var a = 0; a < allItems[1].length;a++) {
+
+    for(var a = 0; a < allItems[1].length; a++) {
       document.getElementById("teacherSearch").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";
     }
-    }
-    for(var b = 0; b < allItems[2].length;b++) {
+
+    for(var b = 0; b < allItems[2].length; b++) {
         document.getElementById("sectionSearch").innerHTML += "<option>" + allItems[2][b].sectionName +  "</option>";
     }
+}
+function addStudentToSection(){
+
 }
 function clearBoxes (){
     var element = document.getElementsByTagName("input");
     for(var i =0;i < element.length;i++){
-        if(element[i].type == "text"){
-            element[i].value == " ";
+        if(element[i].type ==="text"){
+            element[i].value = " ";
         }
     }
 

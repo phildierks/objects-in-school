@@ -7,23 +7,25 @@
     <script src="objects-in-school.js"></script>
     <script src="objectconstructors.js"></script>
     <link rel="stylesheet" href="objects-in-school.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
 </head>
 <body onload="addSelectBox()">
 <h1>School Management System</h1>
 <br>
-<select id="list">
+<select id="list" visibility="hidden">
     <option value="0"> Students</option>
     <option value="1"> Teachers</option>
     <option value="2"> Sections</option>
 </select>
-
+<i class="fa fa-plus" aria-hidden="true"></i>
 <button id="listItems" onclick="listItems()"> List Items</button>
 <br>
 <br>
 <div id="listedItems"></div>
-<hr>
 <br>
-<select id="studentSearch">
+<p id="selectBoxes">
+<select id="studentSearch" onload="addSelectBox()">
     <option value="0"> Select Student</option>
 </select>
 <select id="teacherSearch">
@@ -33,26 +35,32 @@
     <option value="0"> Select Section</option>
 </select>
 <button id="addSelection"> Add Selection</button>
+</p>
 </br>
 <br>
-<hr>
 <br>
+<p id="addStudents">
 <input id="firstNameStudent" type="text" placeholder="First Name">
 <input id="lastNameStudent" type="text" placeholder="Last Name">
 <input id="studentGrade" type="text" placeholder="Grade">
-<button id="addStudent" onclick= addStudent()> Add Student</button>
+<button id="addStudent" onclick="addStudent();document.getElementById('selectBoxes').style.visibility='hidden'"> Add Student</button>
 </br>
+</p>
 <br>
+<p id="addTeachers">
 <input id="firstNameTeacher" type="text" placeholder="First Name">
 <input id="lastNameTeacher" type="text" placeholder="Last Name">
 <input id="teacherSubject" type="text" placeholder="Subject">
 <button id="addTeacher" onclick = "addTeacher()"> Add Teacher</button>
 </br>
+</p>
 <br>
+<p id="addSections">
 <input id="sectionName" type="text" placeholder="Section Name">
 <input id="sectionCount" type="text" placeholder="Section Count">
 <button id="addSection" onclick="addSection()"> Add Section</button>
 </br>
+</p>
 <br>
     <div id="added"></div>
     </br>
