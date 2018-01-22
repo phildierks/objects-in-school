@@ -1,16 +1,20 @@
+var id = 1;
 function Student(firstName,lastName,studentGrade){
+    this.id = id++;
     this.firstName = firstName;
     this.lastName = lastName;
     this.studentGrade = studentGrade;
     this.section = [];
 }
 function Teacher(firstName,lastName,teacherSubject){
+    this.id = id++;
     this.firstName = firstName;
     this.lastName = lastName;
     this.teacherSubject = teacherSubject;
     this.section = [];
 }
 function Section(sectionName,sectionCount){
+    this.id = id++;
     this.sectionName = sectionName;
     this.sectionCount = sectionCount;
     this.student = [];
@@ -20,11 +24,6 @@ function Section(sectionName,sectionCount){
     this.removeStudent = function(student){
         this.student.remove(student);
     }
-
-    //student.push(this.student);
-    //this.teacher = [];
-    //var teacher = document.getElementById(teacherSearch);
-    //teacher.push(this.teacher);
 }
  var allSections = [];
  var allTeachers = [];

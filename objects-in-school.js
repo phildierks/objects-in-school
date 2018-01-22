@@ -47,7 +47,10 @@ function addSelectBox(){
     }
 
     for(var b = 0; b < allItems[2].length; b++) {
-        document.getElementById("sectionSearch").innerHTML += "<option>" + allItems[2][b].sectionName +  "</option>";
+        document.getElementById("teacherSection").innerHTML += "<option>" + allItems[2][b].sectionName +  "</option>";
+    }
+    for(var c = 0; c < allItems[2].length; c++) {
+        document.getElementById("studentSection").innerHTML += "<option>" + allItems[2][c].sectionName +  "</option>";
     }
 }
 function addStudentToSection(){

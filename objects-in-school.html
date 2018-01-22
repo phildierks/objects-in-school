@@ -13,7 +13,7 @@
 <body onload="addSelectBox()">
 <h1>School Management System</h1>
 <br>
-<select id="list" visibility="hidden">
+<select id="list">
     <option value="0"> Students</option>
     <option value="1"> Teachers</option>
     <option value="2"> Sections</option>
@@ -28,13 +28,19 @@
 <select id="studentSearch" onload="addSelectBox()">
     <option value="0"> Select Student</option>
 </select>
-<select id="teacherSearch">
-    <option value="0"> Select Teacher</option>
-</select>
-<select id="sectionSearch">
+<select id="studentSection">
     <option value="0"> Select Section</option>
 </select>
-<button id="addSelection"> Add Selection</button>
+<button id="addSelectionStudent"> Add Student to Section</button>
+</p>
+<p>
+    <select id="teacherSearch">
+        <option value="0"> Select Teacher</option>
+    </select>
+    <select id="teacherSection">
+        <option value="0"> Select Section</option>
+    </select>
+    <button id="addSelectionTeacher"> Add Teacher to Section</button>
 </p>
 </br>
 <br>
