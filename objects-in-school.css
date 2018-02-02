@@ -5,3 +5,6 @@ h1{
     color: #e6793b;
     text-align: center;
 }
+div {
+    display: inline-block;
+}
