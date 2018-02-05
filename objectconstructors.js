@@ -4,7 +4,6 @@ function Student(firstName,lastName,studentGrade){
     this.firstName = firstName;
     this.lastName = lastName;
     this.studentGrade = studentGrade;
-    this.section = [];
 
 }
 function Teacher(firstName,lastName,teacherSubject){
@@ -12,7 +11,6 @@ function Teacher(firstName,lastName,teacherSubject){
     this.firstName = firstName;
     this.lastName = lastName;
     this.teacherSubject = teacherSubject;
-    this.section = [];
 
 }
 function Section(sectionName,sectionCount){
@@ -20,16 +18,16 @@ function Section(sectionName,sectionCount){
     this.sectionCount = sectionCount;
     this.id = id++;
     this.student = [];
+    this.studentNames = [];
     this.teacher = [];
     this.addStudentToSection = function(student){
-        this.student.push(student);
+        this.studentNames.push(student);
+        console.log(this.studentNames);
     };
     this.removeStudentFromSection = function(student){
-        this.student.remove(student);
+        this.studentNames.remove(student);
     };
-    this.addTeacherToSection = function(teacher){
-        this.teacher.push(teacher);
-    }
+
 }
  var allSections = [];
  var allTeachers = [];

@@ -45,22 +45,18 @@ function addSection(){
 }
 
 function addStudentToSection(){
-    var student = document.getElementById("studentSearch").value;
-    var section = document.getElementById("studentSection").value;
+    var stud = document.getElementById("studentSearch").selectedIndex-1;
+    var studentName = allStudents[stud].firstName + " " + allStudents[stud].lastName;
+    var student = allStudents[stud];
+    var sectionNum = document.getElementById("studentSection").selectedIndex;
+    var section = allSections[sectionNum];
+    section.student.push(studentName);
     section.addStudentToSection(student);
 }
 function removeStudentFromSection(){
 
 }
-function removeTeacherFromSection(){
 
-}
-function addTeacherToSection(){
-    var teacher = document.getElementById("teacherSearch").value;
-    var section = document.getElementById("teacherSection").value;
-    section.addTeacherToSection(teacher);
-
-}
 
 function addSelectBox(){
    for(var i = 0; i < allItems[0].length; i++) {
@@ -68,14 +64,6 @@ function addSelectBox(){
        document.getElementById("studentSearch2").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
    }
 
-    for(var a = 0; a < allItems[1].length; a++) {
-      document.getElementById("teacherSearch").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";
-      document.getElementById("teacherSearch2").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";
-   }
-
-    for(var b = 0; b < allItems[2].length; b++) {
-        document.getElementById("teacherSection").innerHTML += "<option>" + allItems[2][b].sectionName +  "</option>";document.getElementById("teacherSection2").innerHTML += "<option>" + allItems[2][b].sectionName +  "</option>";
-    }
     for(var c = 0; c < allItems[2].length; c++) {
         document.getElementById("studentSection").innerHTML += "<option>" + allItems[2][c].sectionName +  "</option>";
         document.getElementById("studentSection2").innerHTML += "<option>" + allItems[2][c].sectionName +  "</option>";
