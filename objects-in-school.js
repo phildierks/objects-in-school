@@ -1,11 +1,11 @@
 function listItems() {
-    var items = document.getElementById("list").value;
+    var items = document.getElementById("list").selectedIndex;
     var item = allItems[items];
     var result = "";
     var x = 0;
     for (var i = 0; i < item.length; i++) {
         for (var prop in item[i]) {
-            if(items == 2){
+            if(items === 2){
                 x++;
             }
             if(x>2){
@@ -46,14 +46,30 @@ function addSection(){
 
 function addStudentToSection(){
     var stud = document.getElementById("studentSearch").selectedIndex-1;
-    var studentName = allStudents[stud].firstName + " " + allStudents[stud].lastName;
     var student = allStudents[stud];
-    var sectionNum = document.getElementById("studentSection").selectedIndex;
+    console.log(student);
+    var sectionNum = document.getElementById("studentSection").selectedIndex-1;
     var section = allSections[sectionNum];
-    section.student.push(studentName);
-    section.addStudentToSection(student);
+    console.log(section);
+    section.addStudentSection(student);
 }
 function removeStudentFromSection(){
+    var stud = document.getElementById("studentSearch").selectedIndex-1;
+    var student = allStudents[stud];
+    console.log(student);
+    var sectionNum = document.getElementById("studentSection").selectedIndex-1;
+    var section = allSections[sectionNum];
+    console.log(section);
+    section.removeStudentSection(student);
+}
+function addTeacherToSection(){
+    var tea = document.getElementById("teacherSearch").selectedIndex-1;
+    var teacher = allTeachers[tea];
+    var sectionNum = document.getElementById("teacherSection").selectedIndex-1;
+    var section = allSections[sectionNum];
+    section.addTeacherSection(teacher);
+}
+function removeTeacherFromSection(){
 
 }
 
@@ -63,7 +79,14 @@ function addSelectBox(){
        document.getElementById("studentSearch").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
        document.getElementById("studentSearch2").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
    }
-
+    for(var a = 0; a < allItems[1].length; a++) {
+        document.getElementById("teacherSearch").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";
+        document.getElementById("teacherSearch2").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";
+    }
+    for(var b = 0; b < allItems[2].length; b++) {
+        document.getElementById("teacherSection").innerHTML += "<option>" + allItems[2][b].sectionName + "</option>";
+        document.getElementById("teacherSection2").innerHTML += "<option>" + allItems[2][b].sectionName + "</option>";
+    }
     for(var c = 0; c < allItems[2].length; c++) {
         document.getElementById("studentSection").innerHTML += "<option>" + allItems[2][c].sectionName +  "</option>";
         document.getElementById("studentSection2").innerHTML += "<option>" + allItems[2][c].sectionName +  "</option>";
@@ -80,7 +103,7 @@ function clearBoxes (){
     }
 
 }
-
+//all functions below deal with display of divs
 function hideSelect(){
     document.getElementById("Selecting").style.display = "inline";
 }
@@ -90,18 +113,29 @@ function add(){
 function hideAdd(){
     document.getElementById("selectBoxes").style.display = "inline";
 }
-function hideOthers(){
+function inline(){
+    document.getElementById("remove").style.display = "inline";
+
+}
+function hideOthers() {
     document.getElementById("selectBoxes").style.display = "none";
     document.getElementById("addThing").style.display = "none";
+    document.getElementById("remove").style.display = "none";
 }
 function hideThem(){
     document.getElementById("selectBoxes").style.display = "none";
     document.getElementById("Selecting").style.display = "none";
+    document.getElementById("remove").style.display = "none";
 }
 function hideOther(){
     document.getElementById("Selecting").style.display = "none";
     document.getElementById("addThing").style.display = "none";
+    document.getElementById("remove").style.display = "none";
+
 }
 function openIt(){
-    document.getElementById("remove").style.display= "inline";
+    document.getElementById("remove").style.display = "inline";
+    document.getElementById("Selecting").style.display = "none";
+    document.getElementById("addThing").style.display = "none";
+    document.getElementById("selectBoxes").style.display = "none";
 }

@@ -22,20 +22,16 @@
     <option value="1"> Teachers</option>
     <option value="2"> Sections</option>
 </select>
-    <br>
     <button type="button" class="btn btn-primary btn-sm" onclick="listItems()"> List Items</button>
-    <br>
     <br>
     <div id="listedItems"></div>
 </div>
-
-<br>
-
 <br>
     <i class="fa fa-random fa-5x" aria-hidden="true" onclick="hideAdd();hideOther()"></i>
 
 <br>
 <p id="selectBoxes" style="display:none;">
+    <br>
 <select id="studentSearch" onload="addSelectBox()">
     <option value="0"> Select Student</option>
 </select>
@@ -45,9 +41,15 @@
 </select>
     <button type="button" class="btn btn-primary btn-sm" onclick="addStudentToSection()"> Add Student To Section</button>
 <br>
-
+    <br>
+      <select id="teacherSearch">
+          <option value="0"> Select Teacher</option>
+      </select>
+    <select id="teacherSection">
+        <option value="0"> Select Section</option>
+    </select>
+    <button type="button" class="btn btn-primary btn-sm" onclick="addTeacherToSection()"> Add Teacher To Section</button>
 </p>
-<br>
 <br>
 <i class="fa fa-plus fa-5x" aria-hidden="true" onclick="add();hideThem()"></i>
 <div id="addThing" style="display: none;">
@@ -75,10 +77,9 @@
     <button type="button" class="btn btn-primary btn-sm" onclick="addSection()"> Add Section</button>
 
 </p>
-<br>
     <div id="added"></div>
 </div>
-<br>
+
 <br>
 <br>
 <i class="fa fa-times-circle fa-5x" aria-hidden="true" onclick="openIt()"></i>
@@ -95,9 +96,13 @@
         <option value="0"> Select Section</option>
     </select>
     <button type="button" class="btn btn-primary btn-sm" onclick="removeStudentFromSection()"> Remove Student</button>
-    <br>
-<br>
-
+    <select id="teacherSearch2">
+            <option value="0"> Select Teacher</option>
+    </select>
+        <select id="teacherSection2">
+            <option value="0"> Select Section</option></select>
+    <button type="button" class="btn btn-primary btn-sm" onclick="removeTeacherFromSection()"> Remove Teacher</button>
 </div>
+
 </body>
 </html>
