@@ -45,40 +45,44 @@ function addSection(){
 }
 
 function addStudentToSection(){
-    var stud = document.getElementById("studentSearch").selectedIndex-1;
+    var stud = document.getElementById("studentSearch").selectedIndex;
     var student = allStudents[stud];
     console.log(student);
-    var sectionNum = document.getElementById("studentSection").selectedIndex-1;
+    var sectionNum = document.getElementById("studentSection").selectedIndex;
     var section = allSections[sectionNum];
     console.log(section);
     section.addStudentSection(student);
 }
 function removeStudentFromSection(){
-    var stud = document.getElementById("studentSearch").selectedIndex-1;
+    var stud = document.getElementById("studentSearch").selectedIndex;
     var student = allStudents[stud];
     console.log(student);
-    var sectionNum = document.getElementById("studentSection").selectedIndex-1;
+    var sectionNum = document.getElementById("studentSection").selectedIndex;
     var section = allSections[sectionNum];
     console.log(section);
     section.removeStudentSection(student);
 }
 function addTeacherToSection(){
-    var tea = document.getElementById("teacherSearch").selectedIndex-1;
+    var tea = document.getElementById("teacherSearch").selectedIndex;
     var teacher = allTeachers[tea];
-    var sectionNum = document.getElementById("teacherSection").selectedIndex-1;
+    var sectionNum = document.getElementById("teacherSection").selectedIndex;
     var section = allSections[sectionNum];
     section.addTeacherSection(teacher);
 }
 function removeTeacherFromSection(){
-
+    var tea = document.getElementById("teacherSearch2").selectedIndex;
+    var teacher = allTeachers[tea];
+    var sectionNum = document.getElementById("teacherSection2").selectedIndex;
+    var section = allSections[sectionNum];
+    section.removeTeacherSection(teacher);
 }
 
 
 function addSelectBox(){
-   for(var i = 0; i < allItems[0].length; i++) {
-       document.getElementById("studentSearch").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
-       document.getElementById("studentSearch2").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
-   }
+    for(var i = 0; i < allItems[0].length; i++) {
+        document.getElementById("studentSearch").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
+        document.getElementById("studentSearch2").innerHTML += "<option>" + allItems[0][i].firstName + " " + allItems[0][i].lastName + "</option>";
+    }
     for(var a = 0; a < allItems[1].length; a++) {
         document.getElementById("teacherSearch").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";
         document.getElementById("teacherSearch2").innerHTML += "<option>" + allItems[1][a].firstName + " " + allItems[1][a].lastName + "</option>";

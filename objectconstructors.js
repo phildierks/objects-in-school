@@ -13,29 +13,33 @@ function Teacher(firstName,lastName,teacherSubject){
     this.teacherSubject = teacherSubject;
 
 }
-function Section(sectionName,sectionCount){
+function Section(sectionName,sectionCount) {
     this.sectionName = sectionName;
     this.sectionCount = sectionCount;
     this.id = id++;
     this.students = [];
     this.teacher = [];
-    this.addStudentSection = function(student){
+    this.addStudentSection = function (student) {
         this.students.push(student);
         console.log(this.students);
     };
-    this.removeStudentSection = function(student){
+    this.removeStudentSection = function (student) {
         this.students.splice(student);
         console.log(this.students);
     };
-    this.addTeacherSection = function(teacher){
+    this.addTeacherSection = function (teacher) {
         this.teacher.push(teacher);
         console.log(this.teacher);
-    }
+    };
+    this.removeTeacherSection = function (teacher) {
+        this.students.splice(teacher);
+        console.log(this.teacher);
 
+    }
 }
- var allSections = [];
- var allTeachers = [];
- var allStudents = [];
+var allSections = [];
+var allTeachers = [];
+var allStudents = [];
 
 allSections.push(new Section("IB English",23));
 allSections.push(new Section("IB Math",20));

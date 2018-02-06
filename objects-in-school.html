@@ -22,34 +22,31 @@
     <option value="1"> Teachers</option>
     <option value="2"> Sections</option>
 </select>
-    <button type="button" class="btn btn-primary btn-sm" onclick="listItems()"> List Items</button>
+    <button type="button" class="btn btn-primary btn-sm "  onclick="listItems()"> List Items</button>
+    <br>
     <br>
     <div id="listedItems"></div>
 </div>
+
+<br>
+
 <br>
     <i class="fa fa-random fa-5x" aria-hidden="true" onclick="hideAdd();hideOther()"></i>
 
 <br>
-<p id="selectBoxes" style="display:none;">
-    <br>
-<select id="studentSearch" onload="addSelectBox()">
-    <option value="0"> Select Student</option>
-</select>
+<p id="selectBoxes" style="display:none;" onload="addSelectBox()">
+    Select Student: <select id="studentSearch"></select>
 
-<select id="studentSection">
-    <option value="0"> Select Section</option>
-</select>
-    <button type="button" class="btn btn-primary btn-sm" onclick="addStudentToSection()"> Add Student To Section</button>
+    Select Section: <select id="studentSection"></select>
+    <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addStudentToSection()"> Add Student To Section</button>
 <br>
+    Select Teacher: <select id="teacherSearch"></select>
+
+    Select Section: <select id="teacherSection"></select>
+    <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addTeacherToSection()"> Add Teacher To Section</button>
     <br>
-      <select id="teacherSearch">
-          <option value="0"> Select Teacher</option>
-      </select>
-    <select id="teacherSection">
-        <option value="0"> Select Section</option>
-    </select>
-    <button type="button" class="btn btn-primary btn-sm" onclick="addTeacherToSection()"> Add Teacher To Section</button>
 </p>
+<br>
 <br>
 <i class="fa fa-plus fa-5x" aria-hidden="true" onclick="add();hideThem()"></i>
 <div id="addThing" style="display: none;">
@@ -58,7 +55,7 @@
 <input id="firstNameStudent" type="text" placeholder="First Name">
 <input id="lastNameStudent" type="text" placeholder="Last Name">
 <input id="studentGrade" type="text" placeholder="Grade">
-    <button type="button" class="btn btn-primary btn-sm" onclick="addStudent();document.getElementById('selectBoxes').style.visibility='hidden'">Add Student</button>
+    <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addStudent();document.getElementById('selectBoxes').style.visibility='hidden'">Add Student</button>
 
 
 </p>
@@ -67,19 +64,20 @@
 <input id="firstNameTeacher" type="text" placeholder="First Name">
 <input id="lastNameTeacher" type="text" placeholder="Last Name">
 <input id="teacherSubject" type="text" placeholder="Subject">
-    <button type="button" class="btn btn-primary btn-sm" onclick="addTeacher()"> Add Teacher</button>
+    <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addTeacher()"> Add Teacher</button>
 
 </p>
 
 <p id="addSections">
 <input id="sectionName" type="text" placeholder="Section Name">
 <input id="sectionCount" type="text" placeholder="Section Count">
-    <button type="button" class="btn btn-primary btn-sm" onclick="addSection()"> Add Section</button>
+    <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addSection()"> Add Section</button>
 
 </p>
+<br>
     <div id="added"></div>
 </div>
-
+<br>
 <br>
 <br>
 <i class="fa fa-times-circle fa-5x" aria-hidden="true" onclick="openIt()"></i>
@@ -88,21 +86,16 @@
 <div id="remove" style="display:none">
 
 
-    <select id="studentSearch2">
-        <option value="0"> Select Student</option>
-    </select>
+    Select Student: <select id="studentSearch2"></select>
 
-    <select id="studentSection2">
-        <option value="0"> Select Section</option>
-    </select>
-    <button type="button" class="btn btn-primary btn-sm" onclick="removeStudentFromSection()"> Remove Student</button>
-    <select id="teacherSearch2">
-            <option value="0"> Select Teacher</option>
-    </select>
-        <select id="teacherSection2">
-            <option value="0"> Select Section</option></select>
-    <button type="button" class="btn btn-primary btn-sm" onclick="removeTeacherFromSection()"> Remove Teacher</button>
+    Select Section: <select id="studentSection2"></select>
+    <button type="button" class="btn btn-primary btn-sm bg-danger text-white" onclick="removeStudentFromSection()"> Remove Student</button>
+    <br>
+    Select Teacher: <select id="teacherSearch2"></select>
+
+    Select Section: <select id="teacherSection2"></select>
+    <button type="button" class="btn btn-primary btn-sm bg-danger text-white" onclick="removeTeacherFromSection()"> Remove Teacher</button>
+
 </div>
-
 </body>
 </html>
