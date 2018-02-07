@@ -2,19 +2,14 @@ function listItems() {
     var items = document.getElementById("list").selectedIndex;
     var item = allItems[items];
     var result = "";
-    var x = 0;
     for (var i = 0; i < item.length; i++) {
-        for (var prop in item[i]) {
-            if(items === 2){
-                x++;
-            }
-            if(x>2){
-                break;
-            }
-            result += item[i][prop] + " ";
-        }
-        result += "<br>";
-
+    if(items == 2){
+        result+= "<br>" + item[i].sectionName + "/ Size: " +item[i].sectionCount;
+    }else if(items==1){
+        result += "<br>" + "Name: " + item[i].firstName + " " + item[i].lastName + "/ Subject: " + item[i].teacherSubject;
+    }else if(items == 0){
+        result += "<br>" + "Name: " + item[i].firstName + " " + item[i].lastName + "/ Grade: " + item[i].studentGrade;
+    }
     }
     document.getElementById("listedItems").innerHTML = result;
 
@@ -47,7 +42,6 @@ function addSection(){
 function addStudentToSection(){
     var stud = document.getElementById("studentSearch").selectedIndex;
     var student = allStudents[stud];
-    console.log(student);
     var sectionNum = document.getElementById("studentSection").selectedIndex;
     var section = allSections[sectionNum];
     console.log(section);
@@ -56,7 +50,6 @@ function addStudentToSection(){
 function removeStudentFromSection(){
     var stud = document.getElementById("studentSearch").selectedIndex;
     var student = allStudents[stud];
-    console.log(student);
     var sectionNum = document.getElementById("studentSection").selectedIndex;
     var section = allSections[sectionNum];
     console.log(section);
@@ -67,6 +60,7 @@ function addTeacherToSection(){
     var teacher = allTeachers[tea];
     var sectionNum = document.getElementById("teacherSection").selectedIndex;
     var section = allSections[sectionNum];
+    console.log(section);
     section.addTeacherSection(teacher);
 }
 function removeTeacherFromSection(){
@@ -74,6 +68,7 @@ function removeTeacherFromSection(){
     var teacher = allTeachers[tea];
     var sectionNum = document.getElementById("teacherSection2").selectedIndex;
     var section = allSections[sectionNum];
+    console.log(section);
     section.removeTeacherSection(teacher);
 }
 
@@ -122,6 +117,7 @@ function inline(){
 
 }
 function hideOthers() {
+    document.getElementById("random").style.display = "inline";
     document.getElementById("selectBoxes").style.display = "none";
     document.getElementById("addThing").style.display = "none";
     document.getElementById("remove").style.display = "none";

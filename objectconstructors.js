@@ -19,20 +19,20 @@ function Section(sectionName,sectionCount) {
     this.id = id++;
     this.students = [];
     this.teacher = [];
-    this.addStudentSection = function (student) {
+    this.addStudentSection = function(student) {
         this.students.push(student);
         console.log(this.students);
     };
-    this.removeStudentSection = function (student) {
+    this.removeStudentSection = function(student) {
         this.students.splice(student);
         console.log(this.students);
     };
-    this.addTeacherSection = function (teacher) {
+    this.addTeacherSection = function(teacher) {
         this.teacher.push(teacher);
         console.log(this.teacher);
     };
-    this.removeTeacherSection = function (teacher) {
-        this.students.splice(teacher);
+    this.removeTeacherSection = function(teacher) {
+        this.teacher.splice(teacher);
         console.log(this.teacher);
 
     }
