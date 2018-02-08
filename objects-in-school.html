@@ -14,7 +14,7 @@
 <body onload="addSelectBox()">
 <h1>School Management System</h1>
 <br>
-<i class="fa fa-list fa-5x" aria-hidden="true" onclick="hideOthers();hideSelect()"></i>
+<i class="fa fa-list fa-5x" aria-hidden="true" onclick="showList()"></i>
 <br>
 <div id="Selecting" style="display: none;">
 <select id="list">
@@ -31,7 +31,7 @@
 <br>
 
 <br>
-<i class="fa fa-random fa-5x" id="random" aria-hidden="true" onclick="hideAdd();hideOther()"></i>
+<i class="fa fa-random fa-5x" id="random" aria-hidden="true" onclick="showAddSelect()"></i>
 
 <br>
 <p id="selectBoxes" style="display:none;" onload="addSelectBox()">
@@ -48,7 +48,7 @@
 </p>
 <br>
 <br>
-<i class="fa fa-plus fa-5x" aria-hidden="true" onclick="add();hideThem()"></i>
+<i class="fa fa-plus fa-5x" aria-hidden="true" onclick="add()"></i>
 <div id="addThing" style="display: none;">
 <p id="addStudents">
     <br>
@@ -80,7 +80,7 @@
 <br>
 <br>
 <br>
-<i class="fa fa-times-circle fa-5x" aria-hidden="true" onclick="openIt()"></i>
+<i class="fa fa-times-circle fa-5x" aria-hidden="true" onclick="showRemoveSelect()"></i>
 <br>
 <br>
 <div id="remove" style="display:none">
@@ -96,6 +96,18 @@
     Select Section: <select id="teacherSection2"></select>
     <button type="button" class="btn btn-primary btn-sm bg-danger text-white" onclick="removeTeacherFromSection()"> Remove Teacher</button>
 
+</div>
+<br>
+<i class="fa fa-search fa-5x" aria-hidden="true" onclick="showSearch()"></i>
+<div id="searchStuff" style="display:none">
+    <br>
+    <select id="typeItem">
+        <option value="0">Student</option>
+        <option value="1">Teacher</option>
+        <option value="2">Section</option>
+    </select>
+    <select id="SearchItem"></select>
+    <button id="searchIt">Search Item</button>
 </div>
 </body>
 </html>

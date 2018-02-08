@@ -102,40 +102,43 @@ function clearBoxes (){
     }
 
 }
+function onChangeSearch(){
+
+}
 //all functions below deal with display of divs
-function hideSelect(){
+function showList() {
     document.getElementById("Selecting").style.display = "inline";
+    document.getElementById("selectBoxes").style.display = "none";
+    document.getElementById("addThing").style.display = "none";
+    document.getElementById("remove").style.display = "none";
+    document.getElementById("searchStuff").style.display= "none";
 }
 function add(){
     document.getElementById("addThing").style.display = "inline";
+    document.getElementById("selectBoxes").style.display = "none";
+    document.getElementById("Selecting").style.display = "none";
+    document.getElementById("remove").style.display = "none";
+    document.getElementById("searchStuff").style.display= "none";
 }
-function hideAdd(){
+function showAddSelect(){
     document.getElementById("selectBoxes").style.display = "inline";
-}
-function inline(){
-    document.getElementById("remove").style.display = "inline";
-
-}
-function hideOthers() {
-    document.getElementById("random").style.display = "inline";
-    document.getElementById("selectBoxes").style.display = "none";
-    document.getElementById("addThing").style.display = "none";
-    document.getElementById("remove").style.display = "none";
-}
-function hideThem(){
-    document.getElementById("selectBoxes").style.display = "none";
-    document.getElementById("Selecting").style.display = "none";
-    document.getElementById("remove").style.display = "none";
-}
-function hideOther(){
     document.getElementById("Selecting").style.display = "none";
     document.getElementById("addThing").style.display = "none";
     document.getElementById("remove").style.display = "none";
+    document.getElementById("searchStuff").style.display= "none";
 
 }
-function openIt(){
+function showRemoveSelect(){
     document.getElementById("remove").style.display = "inline";
     document.getElementById("Selecting").style.display = "none";
     document.getElementById("addThing").style.display = "none";
     document.getElementById("selectBoxes").style.display = "none";
+    document.getElementById("searchStuff").style.display= "none";
+}
+function showSearch(){
+    document.getElementById("Selecting").style.display = "none";
+    document.getElementById("addThing").style.display = "none";
+    document.getElementById("selectBoxes").style.display = "none";
+    document.getElementById("remove").style.display = "none";
+    document.getElementById("searchStuff").style.display= "inline";
 }
