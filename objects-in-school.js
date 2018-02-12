@@ -103,7 +103,24 @@ function clearBoxes (){
 
 }
 function onChangeSearch(){
-
+var item = document.getElementById("typeItem").selectedIndex;
+var result = "";
+if(item == 0){
+    for(var i = 0; i < allStudents.length ;i++) {
+        result += "<option>" + allStudents[i].firstName + " " + allStudents[i].lastName + "</option>";
+    }
+}
+if(item == 1){
+    for(var a = 0; a < allTeachers.length ;a++){
+        result  += "<option>" + allTeachers[a].firstName + " " + allTeachers[a].lastName + '</option>';
+    }
+}
+if(item == 2){
+        for(var b = 0; b < allSections.length ;b++){
+            result  += "<option>" + allSections[b].sectionName + '</option>';
+        }
+    }
+    document.getElementById("searchItem").innerHTML = result;
 }
 //all functions below deal with display of divs
 function showList() {

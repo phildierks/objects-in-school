@@ -74,10 +74,8 @@
     <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addSection()"> Add Section</button>
 
 </p>
-<br>
     <div id="added"></div>
 </div>
-<br>
 <br>
 <br>
 <i class="fa fa-times-circle fa-5x" aria-hidden="true" onclick="showRemoveSelect()"></i>
@@ -101,13 +99,13 @@
 <i class="fa fa-search fa-5x" aria-hidden="true" onclick="showSearch()"></i>
 <div id="searchStuff" style="display:none">
     <br>
-    <select id="typeItem">
+    <select id="typeItem" onchange="onChangeSearch()">
         <option value="0">Student</option>
         <option value="1">Teacher</option>
         <option value="2">Section</option>
     </select>
-    <select id="SearchItem"></select>
-    <button id="searchIt">Search Item</button>
+    <select id="searchItem"></select>
+    <button id="searchIt" onclick=" ">Search Item</button>
 </div>
 </body>
 </html>
