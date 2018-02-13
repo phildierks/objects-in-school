@@ -100,12 +100,17 @@
 <div id="searchStuff" style="display:none">
     <br>
     <select id="typeItem" onchange="onChangeSearch()">
-        <option value="0">Student</option>
-        <option value="1">Teacher</option>
-        <option value="2">Section</option>
+        <option value="0">Select Item</option>
+        <option value="1">Student</option>
+        <option value="2">Teacher</option>
+        <option value="3">Section</option>
     </select>
     <select id="searchItem"></select>
-    <button id="searchIt" onclick=" ">Search Item</button>
+
+    <button id="searchIt" onclick="searchItem() ">Search Item</button>
+    <br>
+    <div id="error"></div>
+    <div id="data"></div>
 </div>
 </body>
 </html>

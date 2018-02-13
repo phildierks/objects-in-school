@@ -104,23 +104,34 @@ function clearBoxes (){
 }
 function onChangeSearch(){
 var item = document.getElementById("typeItem").selectedIndex;
+    document.getElementById("error").innerHTML = "";
 var result = "";
-if(item == 0){
+if(item == 0 ){
+ document.getElementById("error").innerHTML = "Please Select an Item!";
+}
+if(item == 1){
     for(var i = 0; i < allStudents.length ;i++) {
         result += "<option>" + allStudents[i].firstName + " " + allStudents[i].lastName + "</option>";
     }
 }
-if(item == 1){
+if(item == 2){
     for(var a = 0; a < allTeachers.length ;a++){
         result  += "<option>" + allTeachers[a].firstName + " " + allTeachers[a].lastName + '</option>';
     }
 }
-if(item == 2){
+if(item == 3){
         for(var b = 0; b < allSections.length ;b++){
             result  += "<option>" + allSections[b].sectionName + '</option>';
         }
     }
     document.getElementById("searchItem").innerHTML = result;
+}
+function searchItem(){
+    var item = document.getElementById("typeItem").selectedIndex;
+    var index = document.getElementById("searchItem").selectedIndex;
+if(item == 1){
+    document.getElementById('data').innerHTML = this.students[index].firstName + " " + this.students[index].lastName + " " + this.students[index].sectionName;
+}
 }
 //all functions below deal with display of divs
 function showList() {
