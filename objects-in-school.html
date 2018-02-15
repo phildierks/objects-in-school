@@ -38,14 +38,18 @@
     Select Student: <select id="studentSearch"></select>
 
     Select Section: <select id="studentSection"></select>
+
     <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addStudentToSection()"> Add Student To Section</button>
-<br>
+
+    <br>
     Select Teacher: <select id="teacherSearch"></select>
 
     Select Section: <select id="teacherSection"></select>
     <button type="button" class="btn btn-primary btn-sm bg-success text-white" onclick="addTeacherToSection()"> Add Teacher To Section</button>
     <br>
+<div id="error"></div>
 </p>
+
 <br>
 <br>
 <i class="fa fa-plus fa-5x" aria-hidden="true" onclick="add()"></i>
@@ -88,29 +92,21 @@
 
     Select Section: <select id="studentSection2"></select>
     <button type="button" class="btn btn-primary btn-sm bg-danger text-white" onclick="removeStudentFromSection()"> Remove Student</button>
+    <div id="wrong"></div>
     <br>
+
     Select Teacher: <select id="teacherSearch2"></select>
 
     Select Section: <select id="teacherSection2"></select>
     <button type="button" class="btn btn-primary btn-sm bg-danger text-white" onclick="removeTeacherFromSection()"> Remove Teacher</button>
 
 </div>
-<br>
-<i class="fa fa-search fa-5x" aria-hidden="true" onclick="showSearch()"></i>
-<div id="searchStuff" style="display:none">
-    <br>
-    <select id="typeItem" onchange="onChangeSearch()">
-        <option value="0">Select Item</option>
-        <option value="1">Student</option>
-        <option value="2">Teacher</option>
-        <option value="3">Section</option>
-    </select>
-    <select id="searchItem"></select>
 
-    <button id="searchIt" onclick="searchItem() ">Search Item</button>
-    <br>
-    <div id="error"></div>
-    <div id="data"></div>
+<br>
+
+
+<i class="fa fa-times-circle fa-5x" aria-hidden="true"></i> This Button has no function, only helps with the display problem:)
+<div id="data"></div>
 </div>
 </body>
 </html>

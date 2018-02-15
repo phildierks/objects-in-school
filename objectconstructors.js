@@ -1,13 +1,22 @@
-var id = 1;
+var currentSize = 1;
+
+var Person = function(firstName, lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.id = currentSize++;
+};
+Student.prototype = new Person();
+Teacher.prototype = new Person();
+
 function Student(firstName,lastName,studentGrade){
-    this.id = id++;
+ Person.call(this,firstName,lastName);
     this.firstName = firstName;
     this.lastName = lastName;
     this.studentGrade = studentGrade;
 
 }
 function Teacher(firstName,lastName,teacherSubject){
-    this.id = id++;
+    this.id = currentSize++;
     this.firstName = firstName;
     this.lastName = lastName;
     this.teacherSubject = teacherSubject;
@@ -16,15 +25,25 @@ function Teacher(firstName,lastName,teacherSubject){
 function Section(sectionName,sectionCount) {
     this.sectionName = sectionName;
     this.sectionCount = sectionCount;
-    this.id = id++;
     this.students = [];
     this.teacher = [];
+    this.id = currentSize++;
+    this.seatRemaining = this.sectionCount - this.students.length;
     this.addStudentSection = function(student) {
         this.students.push(student);
         console.log(this.students);
+        console.log(this.students[0]);
+        this.seatRemaining--;
+        if(this.seatRemaining==-1){
+            document.getElementById("error").innerHTML = "Not enough space for this student to be added.";
+        }
     };
     this.removeStudentSection = function(student) {
         this.students.splice(student);
+        this.seatRemaining++;
+        if(this.seatRemaining>this.sectionCount){
+            document.getElementById("wrong").innerHTML = "No student to be removed."
+        }
         console.log(this.students);
     };
     this.addTeacherSection = function(teacher) {
